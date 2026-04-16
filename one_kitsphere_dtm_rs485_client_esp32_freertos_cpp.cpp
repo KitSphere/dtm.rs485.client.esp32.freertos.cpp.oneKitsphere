@@ -1,5 +1,5 @@
-#ifndef   KitSphere_DTM_RS485_Client_ESP32_FreeRTOS_CPP
-#define   KitSphere_DTM_RS485_Client_ESP32_FreeRTOS_CPP
+#ifndef   One_KitSphere_DTM_RS485_Client_ESP32_FreeRTOS_CPP
+#define   One_KitSphere_DTM_RS485_Client_ESP32_FreeRTOS_CPP
 #endif
 
 #include <chrono>
@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <vector>
 
+namespace One {
 namespace KitSphere {
 namespace DTM {
 namespace RS485 {
@@ -221,6 +222,7 @@ class CPP {
                 }
         }
 };
+}
 }
 }
 }

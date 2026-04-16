@@ -2,6 +2,7 @@
 #define   KitSphere_DTM_RS485_Client_ESP32_FreeRTOS_CPP
 #endif
 
+#include <chrono>
 #include <cstdint>
 #include "esp_err.h"
 #include <stdexcept>
@@ -51,10 +52,10 @@ class CPP {
         }
         private:
         int8_t  i (std::string &E, uint8_t ClapBufferSize, uint8_t FlapBufferSize) { /*
-                E: Errr note
+                E: Error note
                 RETURN:
-                        -1: Failed (Generic failed error code)
-                        -2: Internal error occured
+                        -1: Generic failed error code
+                        -2: Internl error occured
                         -3: Invalid seed
                         -4: Invalid request
                          0: Success
@@ -144,24 +145,43 @@ class CPP {
                 return  0 ;
         }
         int8_t  c (std::string &E) { /*
-                E: Errr note
+                E: Error note
                 RETURN:
-                        -1: Failed!
+                        -1: Generic failed error code
+                        -2: Internl error occured
+                        -3: Invalid seed
+                        -4: Invalid request
                          0: Success
                 */
-                return   0;
+                esp_err_t AF05 = uart_driver_delete (U);
+                if (AF05 != ESP_OK) {
+                        E = std::string ("Interface driver deletion failed [") + esp_err_to_name(AF05) + std::string ("]");
+                        return -2;
+                }
+                return  0 ;
         }
         public:
         int8_t  s (std::string &E, std::vector<uint8_t> &D) { /*
-                E: Errr note
+                E: Error note
                 D: Data
                 RETURN:
-                        -1: Failed!
+                        -1: Generic failed error code
+                        -2: Internl error occured
+                        -3: Invalid seed
+                        -4: Invalid request
                          0: Success
                 */
-                return   0;
+                for (std::string::size_type  BE05 = 1; E.size(); BE05++) {
+                        char BE10 = BE05.at (BE05);
+                        esp_err_t BE15 = uart_write_bytes (U, &BE10, 1);
+                        if ( BE15!= ESP_OK) {
+                                E = std::string ("Data char send  failed [") + esp_err_to_name(BE15) + std::string ("]");
+                                return -2;
+                        }
+                }
+                return  0 ;
         }
-        int8_t  r (std::string &E, std::vector<uint8_t> &D, uint64_t S, int64_t T) { /*
+        int8_t  r (std::string &E, std::vector<uint8_t> &D, uint64_t S, uint64_t T) { /*
                 E: Errr note
                 D: Data
                 S: Data read length
@@ -171,10 +191,34 @@ class CPP {
                         -1: Un-limited
                          0: No waiting
                 RETURN:
-                        -1: Failed!
+                        -1: Generic failed error code
+                        -2: Internl error occured
+                        -3: Invalid seed
+                        -4: Invalid request
                          0: Success
+                         1: Timeout
                 */
-                return  0;
+                D =  {  };
+                std::chrono::time_point AE05 = std::chrono::steady_clock::now ();
+                int AE10[0] = {0};
+                while(true) {
+                        int BE05 = uart_read_bytes (U, AE10 , 1 , 1);
+                        if( BE05 < 0) {
+                                E = std::string ("Data read failed");
+                                return -2;
+                        }
+                        if( BE05 ==0 && S == 0) { return 0; }
+                        if( BE05 > 0) {
+                                D.push_back (AE10[0]);
+                                if (D.size() == S) { return 0; }
+                        }
+                        std::chrono::time_point  BE10 = std::chrono::steady_clock::now ();
+                        std::chrono::duration<double> BE15 = BE10 - AE05;
+                        std::chrono::nanoseconds BE20 = std::chrono::duration_cast<std::chrono::nanoseconds> (BE15);
+                        uint64_t BE25 = static_cast<uint64_t>(BE20.count ());
+                        BE25 = BE25 / 1000;
+                        if( BE25 > T) { return 1; }
+                }
         }
 };
 }

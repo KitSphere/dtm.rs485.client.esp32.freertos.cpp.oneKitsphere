@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader/bootloader.elf
+file /home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader/bootloader.elf

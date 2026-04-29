@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/qbrian/.espressif/v6.0/esp-idf/components/bootloader/subpro
   file(MAKE_DIRECTORY "/home/qbrian/.espressif/v6.0/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader"
-  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix"
-  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix/tmp"
-  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix/src"
-  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader"
+  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix"
+  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix/tmp"
+  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix/src"
+  "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

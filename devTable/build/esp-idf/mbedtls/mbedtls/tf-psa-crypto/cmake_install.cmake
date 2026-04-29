@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/include/cmake_install.cmake")
-  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/cmake_install.cmake")
-  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/cmake_install.cmake")
-  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/pkgconfig/cmake_install.cmake")
+  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/include/cmake_install.cmake")
+  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/cmake_install.cmake")
+  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/cmake_install.cmake")
+  include("/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/pkgconfig/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/install_local_manifest.txt"
+  file(WRITE "/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

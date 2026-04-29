@@ -1,2 +1,2 @@
-source /home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/gdbinit/symbols
-source /home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build/gdbinit/connect
+source /home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/gdbinit/symbols
+source /home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build/gdbinit/connect

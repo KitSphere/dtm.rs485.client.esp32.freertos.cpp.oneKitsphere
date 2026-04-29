@@ -2144,7 +2144,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_spiffs_
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER____idf_dtm.2ers485.2eclient.2eesp32.2efreertos.2ecpp.2eoneKitsphere_unscanned_
+rule CXX_COMPILER____idf_dtm.2ers485.2eclient.2eesp32.2efreertos.2ecpp.2ed68d838a_unscanned_
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}/home/qbrian/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -2154,7 +2154,7 @@ rule CXX_COMPILER____idf_dtm.2ers485.2eclient.2eesp32.2efreertos.2ecpp.2eoneKits
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER____idf_dtm.2ers485.2eclient.2eesp32.2efreertos.2ecpp.2eoneKitsphere_
+rule C_STATIC_LIBRARY_LINKER____idf_dtm.2ers485.2eclient.2eesp32.2efreertos.2ecpp.2ed68d838a_
   command = $PRE_LINK && /home/qbrian/.espressif/tools/cmake/4.0.3/bin/cmake -E rm -f $TARGET_FILE && /home/qbrian/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/qbrian/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
@@ -2183,7 +2183,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/qbrian/.espressif/tools/cmake/4.0.3/bin/cmake --regenerate-during-build -S/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable -B/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.oneKitsphere/devTable/build
+  command = /home/qbrian/.espressif/tools/cmake/4.0.3/bin/cmake --regenerate-during-build -S/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable -B/home/qbrian/Documents/10-ARS/Project/KitSphere/dtm.rs485.client.esp32.freertos.cpp.d68d838a/devTable/build
   description = Re-running CMake...
   generator = 1
 

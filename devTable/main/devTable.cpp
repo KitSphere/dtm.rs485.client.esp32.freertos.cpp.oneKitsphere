@@ -1,6 +1,6 @@
 #include <chrono>
 #include <cstdlib>
-#include "dtm.rs485.client.esp32.freertos.cpp.oneKitsphere.h"
+#include "dtm.rs485.client.esp32.freertos.cpp.d68d838a.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include <iostream>
@@ -10,15 +10,15 @@
 
 void    TS01 ();
 void    TS02 ();
-extern "C" void app_main () {
-        while  (true){
+extern "C" void app_main ()  {
+        while(true){
                 TS02 ();
         }
-        vTaskDelete (NULL);
+        vTaskDelete(NULL  );
 }
 void    TS01 () {
         try{
-                DTM::RS485::Client::ESP32::FreeRTOS::CPP::OneKitphere BE05 (
+                DTM::RS485::Client::ESP32::FreeRTOS::CPP::D68D838A BE05 (
                         1, 21, 23, 4, 8, 'O', 1, 9600, 256, 256
                 );
                 std::string BE10 = std::string ("Hello world\r\n");
@@ -32,7 +32,7 @@ void    TS01 () {
                                 std::this_thread::sleep_for (std::chrono::seconds (1));
                                 continue;
                         }
-                        std::cout << "Message sent!" << std::endl;
+//                      std::cout << "Message sent!" << std::endl;
                         std::this_thread::sleep_for (std::chrono::seconds (1));
                 }
         } catch (std::exception &E) {
@@ -47,13 +47,13 @@ void    TS01 () {
 }
 void    TS02 () {
         try{
-                DTM::RS485::Client::ESP32::FreeRTOS::CPP::OneKitphere BE05 (
-                        1, 21, 23, 4, 8, 'O', 1, 1000000, 256, 256
+                DTM::RS485::Client::ESP32::FreeRTOS::CPP::D68D838A BE05 (
+                        1, 21, 23, 4, 8, 'N', 1, 9600, 256, 256
                 );
                 while(true) {
                         std::string CE01;
                         std::vector<uint8_t> CE05;
-                        int8_t CE10 = BE05.r(CE01, CE05, 1, 5*1000);
+                        int8_t CE10 = BE05.r(CE01, CE05, 8, -1);
                         if (CE10 != 0) {
                                 std::string  DE05 = std::format ("Data read failed [{}: {}]", CE10, CE01);
                                 std::cout << DE05<< std::endl;
@@ -62,7 +62,7 @@ void    TS02 () {
                         }
                         if (CE05.size() != 0) {
                                 std::string  DE15 (CE05.begin(), CE05.end());
-                                std::cout << DE15 << std::endl;
+                                std::cout << DE15 << " " << CE05.size () << std::endl;
                         }
                 }
         } catch (std::exception &E) {
